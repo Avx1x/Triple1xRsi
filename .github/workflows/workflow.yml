@@ -1,3 +1,16 @@
 env:
   CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
   CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+
+
+import os
+import requests
+
+phone = os.getenv("CALLMEBOT_PHONE")
+apikey = os.getenv("CALLMEBOT_APIKEY")
+
+message = "This is a test"
+url = f"https://api.callmebot.com/whatsapp.php?phone={phone}&text={message}&apikey={apikey}"
+
+response = requests.get(url)
+print(response.text)
