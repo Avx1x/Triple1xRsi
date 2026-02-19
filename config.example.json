@@ -1,0 +1,8 @@
+{
+  "symbols": ["BTCUSDT", "ETHUSDT"],
+  "interval": "15m",
+  "rsi_period": 14,
+  "oversold": 30,
+  "overbought": 70,
+  "check_every_seconds": 60
+}
