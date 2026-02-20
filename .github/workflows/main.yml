@@ -1,0 +1,16 @@
+name: Send Alert
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  alert-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send API Alert
+        run: |
+          curl -X POST https://example.com/alert \
+               -H "Authorization: Bearer ${{ secrets.API_KEY }}" \
+               -d '{"message":"Alert: Check your system!"}'
